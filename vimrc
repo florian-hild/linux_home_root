@@ -47,9 +47,6 @@ set tabstop=4
 " Use space characters instead of tabs.
 set expandtab
 
-" save backup files.
-set backup
-
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
 
