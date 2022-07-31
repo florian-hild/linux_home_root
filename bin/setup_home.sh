@@ -32,7 +32,7 @@ for item in "${links[@]}"; do
     ln -sf /root/linux_home_root/${item} /root/${item}
   else
     mv ${item} ${item}_$(date +%Y_%m_%d-%H_%M_%S)
-    ln -s /root/linux_home_root/${item} /root/{item}
+    ln -s /root/linux_home_root/${item} /root/${item}
   fi
 done
 
