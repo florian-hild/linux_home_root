@@ -9,13 +9,13 @@
 export LANG=C
 declare -r __SCRIPT_VERSION__='1.0'
 
-if ! grep -wq '\. ~/linux_home_root/bash_profile' ~/.bash_profile; then
+if ! grep -wq '\. ~/linux_home_root/\.bash_profile' ~/.bash_profile; then
 echo "Append to \"~/.bash_profile\":"
 echo "-------------------------------------------------------------------------------"
 tee -a $HOME/.bash_profile << END
 
-if [[ -f ~/linux_home_root/bash_profile ]]; then
-    . ~/linux_home_root/bash_profile
+if [[ -f ~/linux_home_root/.bash_profile ]]; then
+    . ~/linux_home_root/.bash_profile
 fi
 END
 echo "-------------------------------------------------------------------------------"
