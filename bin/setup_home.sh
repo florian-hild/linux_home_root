@@ -29,10 +29,10 @@ links=(
 
 for item in "${links[@]}"; do
   if [[ -L /root/${item} ]]; then
-    ln -sf /root/linux_home_root/${item} /root/${item}
+    ln -sf /root/linux_home_root/${item} /root/
   else
     mv ${item} ${item}_$(date +%Y_%m_%d-%H_%M_%S)
-    ln -s /root/linux_home_root/${item} /root/${item}
+    ln -s /root/linux_home_root/${item} /root/
   fi
 done
 
