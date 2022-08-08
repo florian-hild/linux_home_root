@@ -25,6 +25,9 @@ set nonumber
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
 
+" Set color schema
+colorscheme desert
+
 " Highlight cursor line underneath the cursor vertically.
 set nocursorcolumn
 
