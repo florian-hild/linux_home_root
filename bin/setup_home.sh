@@ -1,38 +1,16 @@
 #!/bin/bash
 
-#-------------------------------------------------------------------------------
-# Author     : Florian Hild
-# Created    : 29-07-2022
-# Description: Setup links in $HOME
-#-------------------------------------------------------------------------------
-
-export LANG=C
-declare -r __SCRIPT_VERSION__='1.0'
-
 if ! grep -wq '\. ~/linux_home_root/\.bash_profile' ~/.bash_profile; then
-echo "Append to \"~/.bash_profile\":"
-echo "-------------------------------------------------------------------------------"
-tee -a $HOME/.bash_profile << END
+cat <<EOT >> $HOME/.bash_profile
 
-if [[ -f ~/linux_home_root/.bash_profile ]]; then
-    . ~/linux_home_root/.bash_profile
+if [ -f $HOME/linux_home_root/.bash_profile ]; then
+    . $HOME/linux_home_root/.bash_profile
 fi
-END
-echo "-------------------------------------------------------------------------------"
+EOT
 fi
 
-links=(
-  .gitconfig
-  .vimrc
-  .vim
-)
-
-for item in "${links[@]}"; do
-  if [[ -L /root/${item} ]]; then
-    ln -sf /root/linux_home_root/${item} /root/
-  else
-    mv ${item} ${item}_$(date +%Y_%m_%d-%H_%M_%S)
-    ln -s /root/linux_home_root/${item} /root/
-  fi
-done
+ln -sfn $HOME/linux_home_root/.vim $HOME/.vim
+ln -sfn $HOME/linux_home_root/.vimrc $HOME/.vimrc
+ln -sfn $HOME/linux_home_root/.gitconfig $HOME/.gitconfig
+ln -sfn $HOME/linux_home_root/.digrc $HOME/.digrc
 
