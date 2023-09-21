@@ -2,8 +2,6 @@
 
 ### Set PATH
 mypaths=(
-  "$HOME/lib/bash_lib"
-  "$HOME/bin/bash_bin"
   "$HOME/$(hostname -s)/bin"
   "$HOME/bin"
   "$HOME/linux_home_root/bin"
