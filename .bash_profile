@@ -77,7 +77,6 @@ export TERM=xterm-256color
 export EDITOR=vim
 export BIN="~/$(hostname -s)/bin"
 export CONFIG="~/$(hostname -s)/config"
-export LIB_BASH="~/lib/bash_lib"
 
 ### Custom prompt
 if [[ "${LOGNAME}" = "root" ]] || [[ "$(id -u)" -eq "0" ]]; then
